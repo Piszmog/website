@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ChangeReason, Toolbox } from "$lib/utils/types";
+	import type { ChangeReason, Toolbox } from '$lib/utils/types';
 	import JobIcon from '$lib/components/JobIcon.svelte';
 	import { format } from '$lib/utils/date';
 
