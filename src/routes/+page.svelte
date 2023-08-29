@@ -7,6 +7,7 @@
 				<h2 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
 					Dad, Runner, Engineer, Tinkerer
 				</h2>
+
 				<p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">
 					I am Randell, a software engineer and tinkerer based in colorful Colorado. I enjoy
 					building things, whether it be software, hardware, or something in between. I am a father
