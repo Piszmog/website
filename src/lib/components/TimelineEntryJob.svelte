@@ -2,6 +2,7 @@
 	import type { ChangeReason, Toolbox } from '$lib/utils/types';
 	import JobIcon from '$lib/components/JobIcon.svelte';
 	import { format } from '$lib/utils/date';
+	import ToolboxCards from '$lib/components/ToolboxCards.svelte';
 
 	export let start: string;
 	export let end: string;
@@ -35,11 +36,15 @@
 				<p class="mt-0.5 text-sm text-gray-500">{title}</p>
 				<p class="mt-0.5 text-xs text-gray-500">{format(start)} - {format(end)}</p>
 			</div>
-			<div class="mt-2 text-sm text-gray-700">
-				<p>
-					<!--{description}-->
-				</p>
-			</div>
+			<ul class="list-none">
+				{#each details as detail, index (index)}
+					<li class="mt-2 flex items-center">
+						<span class="mr-2 inline-block h-1 w-1 rounded-full bg-black"></span>
+						<p class="text-sm text-gray-700">{detail}</p>
+					</li>
+				{/each}
+			</ul>
+			<ToolboxCards {toolbox} />
 		</div>
 	</div>
 </div>
