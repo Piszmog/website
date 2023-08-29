@@ -2,6 +2,22 @@
 	import DarkModeButton from '$lib/components/DarkModeButton.svelte';
 	import HomeLink from '$lib/components/LinkHome.svelte';
 	import { page } from '$app/stores';
+	import { slide } from 'svelte/transition';
+	import { onDestroy } from 'svelte';
+
+	let open = false;
+
+	let currentPage = '';
+	let pageChanged = false;
+	const unsubscribe = page.subscribe((value) => {
+		pageChanged = currentPage !== value.route.id;
+		if (pageChanged) {
+			open = false;
+		}
+		currentPage = value.route.id;
+	});
+
+	onDestroy(unsubscribe);
 </script>
 
 <header class="bg-white dark:bg-slate-800">
@@ -13,6 +29,7 @@
 			<button
 				type="button"
 				class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-white"
+				on:click={() => (open = !open)}
 			>
 				<span class="sr-only">Open main menu</span>
 				<svg
@@ -58,56 +75,62 @@
 			<DarkModeButton />
 		</div>
 	</nav>
-	<!-- Mobile menu, show/hide based on menu open state. -->
-	<div class="lg:hidden" role="dialog" aria-modal="true">
-		<!-- Background backdrop, show/hide based on slide-over state. -->
-		<div class="fixed inset-0 z-10"></div>
-		<div
-			class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
-		>
-			<div class="flex items-center justify-between">
-				<HomeLink />
-				<button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-					<span class="sr-only">Close menu</span>
-					<svg
-						class="h-6 w-6"
-						fill="none"
-						viewBox="0 0 24 24"
-						stroke-width="1.5"
-						stroke="currentColor"
-						aria-hidden="true"
+	{#if open}
+		<div class="lg:hidden" role="dialog" aria-modal="true">
+			<div class="fixed inset-0 z-10"></div>
+			<div
+				in:slide={{ duration: 500 }}
+				out:slide={{ duration: 500 }}
+				class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 dark:bg-slate-800 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+			>
+				<div class="flex items-center justify-between">
+					<HomeLink />
+					<button
+						type="button"
+						class="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-white"
+						on:click={() => (open = !open)}
 					>
-						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-					</svg>
-				</button>
-			</div>
-			<div class="mt-6 flow-root">
-				<div class="-my-6 divide-y divide-gray-500/10">
-					<div class="space-y-2 py-6">
-						<a
-							href="/about"
-							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white"
+						<span class="sr-only">Close menu</span>
+						<svg
+							class="h-6 w-6"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							aria-hidden="true"
 						>
-							About
-						</a>
-						<!--						<a-->
-						<!--							href="/blog"-->
-						<!--							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white"-->
-						<!--						>-->
-						<!--							Blog-->
-						<!--						</a>-->
-						<a
-							href="/experience"
-							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white"
-						>
-							Experience
-						</a>
-					</div>
-					<div class="py-6">
-						<DarkModeButton />
+							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+						</svg>
+					</button>
+				</div>
+				<div class="mt-6 flow-root">
+					<div class="-my-6 divide-y divide-gray-500/10">
+						<div class="space-y-2 py-6">
+							<a
+								href="/about"
+								class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white"
+							>
+								About
+							</a>
+							<!--						<a-->
+							<!--							href="/blog"-->
+							<!--							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white"-->
+							<!--						>-->
+							<!--							Blog-->
+							<!--						</a>-->
+							<a
+								href="/experience"
+								class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white"
+							>
+								Experience
+							</a>
+						</div>
+						<div class="py-6">
+							<DarkModeButton />
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	{/if}
 </header>

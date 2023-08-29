@@ -41,7 +41,7 @@
 					{format(start)} - {format(end)}
 				</p>
 			</div>
-			<ul class="list-none">
+			<ul class="mr-3 list-none">
 				{#each details as detail, index (index)}
 					<li class="mt-2 flex items-center">
 						<span class="mr-2 inline-block h-1 w-1 rounded-full bg-black"></span>
