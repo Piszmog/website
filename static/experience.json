@@ -81,7 +81,7 @@
 				"plan": ["JIRA"],
 				"code": ["Java", "Spring Boot", "Python"],
 				"model": ["XML", "JSON"],
-				"view": [],
+				"view": ["Angular"],
 				"build": ["Bamboo"],
 				"run": ["Cloud Foundry"],
 				"persist": ["MongoDB", "Redis"],
