@@ -1,6 +1,8 @@
 <script lang="ts">
 	import Timeline from '$lib/components/Timeline.svelte';
-	import { ChangeReason } from '$lib/utils/types';
+	import type { PageData } from './$types';
+
+	export let data: PageData;
 </script>
 
 <div class="bg-white py-10 sm:py-10">
@@ -11,29 +13,6 @@
 		</div>
 	</div>
 	<div class="flex justify-center border-t border-gray-200 py-10">
-		<Timeline
-			jobs={[
-				{
-					id: 0,
-					start: '2021-01-01',
-					end: '2022-01-01',
-					company: 'Company B',
-					title: 'Title B',
-					description: 'Fo bar baz',
-					changeReason: ChangeReason.New,
-					skills: ['Java', 'MongoDB']
-				},
-				{
-					id: 1,
-					start: '2020-01-01',
-					end: '2021-01-01',
-					company: 'Company A',
-					title: 'Title A',
-					description: 'Fo bar baz',
-					changeReason: ChangeReason.Promotion,
-					skills: ['Java', 'MongoDB']
-				}
-			]}
-		/>
+		<Timeline jobs={data.jobs} education={data.education} />
 	</div>
 </div>

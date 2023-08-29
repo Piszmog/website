@@ -4,14 +4,25 @@ export interface Job {
 	end: string;
 	company: string;
 	title: string;
-	description: string;
+	details: string[];
 	changeReason: ChangeReason;
-	skills: string[];
+	toolbox: Toolbox;
 }
 
 export enum ChangeReason {
 	New = 'new',
 	Promotion = 'promotion'
+}
+
+export interface Toolbox {
+	plan: string[];
+	code: string[];
+	model: string[];
+	view: string[];
+	build: string[];
+	run: string[];
+	persist: string[];
+	move: string[];
 }
 
 export interface Education {

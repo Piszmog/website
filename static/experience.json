@@ -1,0 +1,128 @@
+{
+	"jobs": [
+		{
+			"id": 0,
+			"start": "2014-01-01T01:00:00.000-07:00",
+			"end": "2015-03-01T01:00:00.000-07:00",
+			"company": "Intelligent Software Solutions",
+			"title": "Software Engineer",
+			"details": [],
+			"changeReason": "new",
+			"toolbox": {
+				"plan": [],
+				"code": ["Java", "Swing", "JavaScript", "Spring"],
+				"model": ["XML", "JSON"],
+				"view": ["Ext JS", "PrimeFaces"],
+				"build": ["TeamCity"],
+				"run": ["WebSphere"],
+				"persist": ["Oracle"],
+				"move": ["REST", "SOAP", "RabbitMQ"]
+			}
+		},
+		{
+			"id": 1,
+			"start": "2015-03-01T01:00:00.000-07:00",
+			"end": "2016-01-01T01:00:00.000-07:00",
+			"company": "Raytheon",
+			"title": "Software Engineer",
+			"details": [],
+			"changeReason": "new",
+			"toolbox": {
+				"plan": [],
+				"code": ["Java", "Swing", "JavaScript", "Python"],
+				"model": ["XML", "JSON"],
+				"view": ["PrimeFaces"],
+				"build": [""],
+				"run": ["WebLogic"],
+				"persist": ["Oracle"],
+				"move": ["REST", "SOAP"]
+			}
+		},
+		{
+			"id": 2,
+			"start": "2016-01-01T01:00:00.000-07:00",
+			"end": "2017-03-01T01:00:00.000-07:00",
+			"company": "Charles Schwab",
+			"title": "Associate Software Engineer",
+			"details": [],
+			"changeReason": "new",
+			"toolbox": {
+				"plan": ["Team Foundation Server", "JIRA"],
+				"code": ["Java", "Spring"],
+				"model": ["XML", "JSON"],
+				"view": [],
+				"build": ["Jenkins", "Bamboo"],
+				"run": ["WebLogic", "Cloud Foundry"],
+				"persist": ["MongoDB"],
+				"move": ["REST", "SOAP"]
+			}
+		},
+		{
+			"id": 3,
+			"start": "2017-03-01T01:00:00.000-07:00",
+			"end": "2019-07-01T01:00:00.000-07:00",
+			"company": "Charles Schwab",
+			"title": "Software Engineer",
+			"details": [],
+			"changeReason": "promotion",
+			"toolbox": {
+				"plan": ["JIRA"],
+				"code": ["Java", "Spring Boot", "Python"],
+				"model": ["XML", "JSON"],
+				"view": [],
+				"build": ["Bamboo"],
+				"run": ["Cloud Foundry"],
+				"persist": ["MongoDB", "Redis"],
+				"move": ["REST", "SOAP", "RabbitMQ"]
+			}
+		},
+		{
+			"id": 4,
+			"start": "2019-07-01T01:00:00.000-07:00",
+			"end": "2022-05-01T01:00:00.000-07:00",
+			"company": "Charles Schwab",
+			"title": "Senior Software Engineer",
+			"details": [],
+			"changeReason": "promotion",
+			"toolbox": {
+				"plan": ["JIRA", "GitHub"],
+				"code": ["Java", "Spring Boot", "Go", "TypeScript", "Python"],
+				"model": ["JSON"],
+				"view": ["Angular"],
+				"build": ["Bamboo", "GitHub Actions"],
+				"run": ["Cloud Foundry"],
+				"persist": ["Microsoft SQL Server"],
+				"move": ["REST"]
+			}
+		},
+		{
+			"id": 5,
+			"start": "2022-05-01T01:00:00.000-07:00",
+			"end": "2023-08-01T01:00:00.000-07:00",
+			"company": "Sourcegraph",
+			"title": "Senior Software Engineer",
+			"details": [],
+			"changeReason": "new",
+			"toolbox": {
+				"plan": ["GitHub"],
+				"code": ["Go", "TypeScript", "Python"],
+				"model": ["JSON", "Protobuf", "GraphQL"],
+				"view": ["React", "Svelte"],
+				"build": ["GitHub Actions", "Buildkite"],
+				"run": ["Google Cloud Platform", "AWS", "Kubernetes", "Docker"],
+				"persist": ["PostgreSQL", "Redis"],
+				"move": ["REST", "gRPC", "GraphQL"]
+			}
+		}
+	],
+	"education": [
+		{
+			"id": 6,
+			"start": "2009-08-01T01:00:00.000-07:00",
+			"end": "2013-08-01T01:00:00.000-07:00",
+			"school": "University of Colorado Boulder",
+			"degree": "Bachelor of Science",
+			"field": "Applied Mathematics"
+		}
+	]
+}

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ChangeReason } from '$lib/utils/types';
+	import type { ChangeReason, Toolbox } from "$lib/utils/types";
 	import JobIcon from '$lib/components/JobIcon.svelte';
 	import { format } from '$lib/utils/date';
 
@@ -7,8 +7,9 @@
 	export let end: string;
 	export let company: string;
 	export let title: string;
-	export let description: string;
+	export let details: string[];
 	export let changeReason: ChangeReason;
+	export let toolbox: Toolbox;
 	export let isLast = false;
 </script>
 
@@ -36,7 +37,7 @@
 			</div>
 			<div class="mt-2 text-sm text-gray-700">
 				<p>
-					{description}
+					<!--{description}-->
 				</p>
 			</div>
 		</div>

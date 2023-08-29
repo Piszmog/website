@@ -4,9 +4,9 @@
 	import TimelineEntryEducation from '$lib/components/TimelineEntryEducation.svelte';
 
 	export let jobs: Job[] = [];
-	export let educations: Education[] = [];
+	export let education: Education[] = [];
 
-	const data = [...jobs, ...educations];
+	const data = [...jobs, ...education];
 
 	data.sort(
 		(a: Job | Education, b: Job | Education) =>
@@ -23,9 +23,9 @@
 					end={d.end}
 					company={d.company}
 					title={d.title}
-					description={d.description}
+					details={d.details}
 					changeReason={d.changeReason}
-					skills={d.skills}
+					toolbox={d.toolbox}
 					isLast={index === data.length - 1}
 				/>
 			{:else if d.school !== undefined}
