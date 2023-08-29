@@ -4,7 +4,7 @@
 	import { page } from '$app/stores';
 </script>
 
-<header class="bg-white">
+<header class="bg-white dark:bg-slate-800">
 	<nav class="mx-auto flex items-center justify-between p-6 lg:px-8" aria-label="Global">
 		<div class="flex lg:flex-1">
 			<HomeLink />
@@ -12,7 +12,7 @@
 		<div class="flex lg:hidden">
 			<button
 				type="button"
-				class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+				class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-white"
 			>
 				<span class="sr-only">Open main menu</span>
 				<svg
@@ -35,21 +35,21 @@
 			<a
 				href="/about"
 				class:text-blue-600={$page.route.id === '/about'}
-				class="text-sm font-semibold leading-6 text-gray-900"
+				class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
 			>
 				About
 			</a>
 			<a
 				href="/blog"
 				class:text-blue-600={$page.route.id === '/blog'}
-				class="text-sm font-semibold leading-6 text-gray-900"
+				class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
 			>
 				Blog
 			</a>
 			<a
 				href="/experience"
 				class:text-blue-600={$page.route.id === '/experience'}
-				class="text-sm font-semibold leading-6 text-gray-900"
+				class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
 			>
 				Experience
 			</a>
@@ -86,19 +86,19 @@
 					<div class="space-y-2 py-6">
 						<a
 							href="/about"
-							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white"
 						>
 							About
 						</a>
 						<a
 							href="/blog"
-							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white"
 						>
 							Blog
 						</a>
 						<a
 							href="/resume"
-							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white"
 						>
 							Resume
 						</a>

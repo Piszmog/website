@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<footer class="bg-white">
+<footer class="bg-white dark:bg-slate-800">
 	<div class="mx-auto max-w-7xl px-6 pb-12 md:flex md:items-center md:justify-between lg:px-8">
 		<div class="flex justify-center space-x-6 md:order-2">
 			<a href="https://github.com/Piszmog" class="text-gray-400 hover:text-gray-500">

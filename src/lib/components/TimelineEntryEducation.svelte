@@ -11,13 +11,16 @@
 
 <div class="relative pb-8">
 	{#if !isLast}
-		<span class="absolute left-5 top-5 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
+		<span
+			class="absolute left-5 top-5 -ml-px h-full w-0.5 bg-gray-200 dark:bg-slate-400"
+			aria-hidden="true"
+		></span>
 	{/if}
 	<div class="relative flex items-start space-x-3">
 		<div>
 			<div class="relative px-1">
 				<div
-					class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 ring-8 ring-white"
+					class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 ring-8 ring-white dark:bg-slate-600 dark:text-white dark:ring-slate-800"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -41,12 +44,14 @@
 		<div class="min-w-0 flex-1">
 			<div>
 				<div class="text-sm">
-					<p class="font-medium text-gray-900">{school}</p>
+					<p class="font-medium text-gray-900 dark:text-white">{school}</p>
 				</div>
-				<p class="mt-0.5 text-sm text-gray-500">{degree}</p>
-				<p class="mt-0.5 text-xs text-gray-500">{format(start)} - {format(end)}</p>
+				<p class="mt-0.5 text-sm text-gray-500 dark:text-slate-300">{degree}</p>
+				<p class="mt-0.5 text-xs text-gray-500 dark:text-slate-300">
+					{format(start)} - {format(end)}
+				</p>
 			</div>
-			<div class="mt-2 text-sm text-gray-700">
+			<div class="mt-2 text-sm text-gray-700 dark:text-slate-400">
 				<p>
 					{field}
 				</p>

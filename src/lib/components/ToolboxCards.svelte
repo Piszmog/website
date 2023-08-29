@@ -8,7 +8,7 @@
 </script>
 
 <div class="mt-2">
-	<h2 class="text-md font-medium text-gray-500">Toolbox</h2>
+	<h2 class="text-md font-medium text-gray-500 dark:text-slate-300">Toolbox</h2>
 	<ul role="list" class="mt-3 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
 		{#each entries as entry, index (entry.key)}
 			{#if entry.value.length > 0}

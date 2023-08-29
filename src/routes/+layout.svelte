@@ -6,7 +6,7 @@
 
 <Header />
 <div class="flex min-h-screen flex-col">
-	<main class="flex-grow">
+	<main class="flex-grow dark:bg-slate-800">
 		<div class="py-10">
 			<div class="mx-auto sm:px-6 lg:px-8">
 				<slot />

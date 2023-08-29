@@ -1,13 +1,13 @@
-<div class="bg-white py-10 sm:py-10">
+<div class="py-10 sm:py-10">
 	<div
 		class="mx-auto max-w-2xl px-4 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
 	>
 		<div class="lg:max-w-lg lg:self-end">
 			<div class="mx-auto max-w-2xl lg:mx-0">
-				<h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+				<h2 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
 					Dad, Runner, Engineer, Tinkerer
 				</h2>
-				<p class="mt-6 text-lg leading-8 text-gray-600">
+				<p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">
 					I am Randell, a software engineer and tinkerer based in colorful Colorado. I enjoy
 					building things, whether it be software, hardware, or something in between. I am a father
 					of two (👶 and 🐶), a runner, and a lover of the outdoors.

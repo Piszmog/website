@@ -1,23 +1,25 @@
-<div class="bg-white py-10 sm:py-10">
+<div class="py-10 sm:py-10">
 	<div
 		class="mx-auto max-w-2xl px-4 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
 	>
 		<div class="lg:max-w-lg lg:self-end">
 			<div class="mx-auto max-w-2xl lg:mx-0">
-				<h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Welcome 👋!</h2>
-				<p class="mt-6 text-lg leading-8 text-gray-600">I am Randell Callahan.</p>
-				<p class="mt-6 text-lg leading-8 text-gray-600">
+				<h2 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
+					Welcome 👋!
+				</h2>
+				<p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">I am Randell Callahan.</p>
+				<p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">
 					In Hungarian, there is a word 'Piszmog' which means to tinker or mess around with things.
 					This word resonates with me deeply as I thoroughly enjoy learning new technologies,
 					deciphering how things operate, and ultimately, making them work efficiently.
 				</p>
-				<p class="mt-6 text-lg leading-8 text-gray-600">
+				<p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">
 					I am fortunate to wear multiple hats - I am a team leader, mentor, designer, and a
 					continuous learner with a fervent passion for clean and maintainable code. These roles are
 					not just titles for me; they define who I am and reflect my commitment to growth, both
 					personally and professionally.
 				</p>
-				<p class="mt-6 text-lg leading-8 text-gray-600">
+				<p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">
 					Furthermore, I deeply value a community where developers can flourish, share experiences,
 					and disseminate knowledge. I believe that when we come together as a community, we can
 					accomplish great things, inspire one another, and contribute to a better future for all.
