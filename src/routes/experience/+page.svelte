@@ -9,7 +9,7 @@
 	<div class="flex justify-center pb-10">
 		<div class="mx-auto max-w-2xl lg:mx-0">
 			<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-				My Experience
+				My Experiences 💪
 			</h2>
 			<p class="mt-2 text-lg leading-8 text-gray-600 dark:text-white">
 				Places I have worked and what I learned.
