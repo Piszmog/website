@@ -5,7 +5,7 @@
 	export let data: PageData;
 </script>
 
-<div class="py-10 sm:py-10">
+<div class="ml-3 mr-3 py-10 sm:py-10">
 	<div class="flex justify-center pb-10">
 		<div class="mx-auto max-w-2xl lg:mx-0">
 			<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
