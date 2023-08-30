@@ -3,8 +3,12 @@
 	import BlogPreview from '$lib/components/BlogPreview.svelte';
 
 	export let blogs: Blog[];
+
+	const data = blogs.sort((a, b) => {
+		return new Date(b.date).getTime() - new Date(a.date).getTime();
+	});
 </script>
 
-{#each blogs as blog (blog.id)}
+{#each data as blog (blog.id)}
 	<BlogPreview {...blog} />
 {/each}
