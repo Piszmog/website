@@ -41,3 +41,12 @@ export interface Project {
 	url: string;
 	languages: string[];
 }
+
+export interface Blog {
+	id: number;
+	date: string;
+	title: string;
+	tags: string[];
+	preview: string;
+	slug: string;
+}

@@ -1,6 +1,6 @@
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
-import type { Education, Job, Project } from '$lib/utils/types';
+import type { Blog, Education, Job, Project } from '$lib/utils/types';
 
 declare global {
 	namespace App {
@@ -10,6 +10,7 @@ declare global {
 			jobs: Job[];
 			education: Education[];
 			projects: Project[];
+			blogs: Blog[];
 		}
 		// interface Platform {}
 	}
