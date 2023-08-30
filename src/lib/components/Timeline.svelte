@@ -18,25 +18,9 @@
 	<ul role="list" class="-mb-8">
 		{#each data as d, index (d.id)}
 			{#if d.company !== undefined}
-				<TimelineEntryJob
-					start={d.start}
-					end={d.end}
-					company={d.company}
-					title={d.title}
-					details={d.details}
-					changeReason={d.changeReason}
-					toolbox={d.toolbox}
-					isLast={index === data.length - 1}
-				/>
+				<TimelineEntryJob {...d} isLast={index === data.length - 1} />
 			{:else if d.school !== undefined}
-				<TimelineEntryEducation
-					start={d.start}
-					end={d.end}
-					school={d.school}
-					degree={d.degree}
-					field={d.field}
-					isLast={index === data.length - 1}
-				/>
+				<TimelineEntryEducation {...d} isLast={index === data.length - 1} />
 			{/if}
 		{/each}
 	</ul>
