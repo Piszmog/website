@@ -79,7 +79,7 @@
 			"changeReason": "promotion",
 			"toolbox": {
 				"plan": ["JIRA"],
-				"code": ["Java", "Spring Boot", "Python"],
+				"code": ["Java", "Spring Boot", "Python", "JavaScript"],
 				"model": ["XML", "JSON"],
 				"view": ["Angular"],
 				"build": ["Bamboo"],
@@ -102,7 +102,7 @@
 			"changeReason": "promotion",
 			"toolbox": {
 				"plan": ["JIRA", "GitHub"],
-				"code": ["Java", "Spring Boot", "Go", "TypeScript", "Python"],
+				"code": ["Java", "Spring Boot", "Go", "TypeScript", "Python", "JavaScript"],
 				"model": ["JSON"],
 				"view": ["Angular"],
 				"build": ["Bamboo", "GitHub Actions"],
@@ -128,7 +128,7 @@
 			"changeReason": "new",
 			"toolbox": {
 				"plan": ["GitHub"],
-				"code": ["Go", "TypeScript", "Python"],
+				"code": ["Go", "TypeScript", "Python", "JavaScript"],
 				"model": ["JSON", "Protobuf", "GraphQL"],
 				"view": ["React", "Svelte"],
 				"build": ["GitHub Actions", "Buildkite"],
