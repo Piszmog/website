@@ -56,13 +56,13 @@
 			>
 				About
 			</a>
-			<!--			<a-->
-			<!--				href="/blog"-->
-			<!--				class:text-blue-600={$page.route.id === '/blog'}-->
-			<!--				class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"-->
-			<!--			>-->
-			<!--				Blog-->
-			<!--			</a>-->
+			<a
+				href="/blog"
+				class:text-blue-600={$page.route.id === '/blog'}
+				class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
+			>
+				Blog
+			</a>
 			<a
 				href="/experience"
 				class:text-blue-600={$page.route.id === '/experience'}
@@ -119,12 +119,12 @@
 							>
 								About
 							</a>
-							<!--						<a-->
-							<!--							href="/blog"-->
-							<!--							class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white"-->
-							<!--						>-->
-							<!--							Blog-->
-							<!--						</a>-->
+							<a
+								href="/blog"
+								class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white"
+							>
+								Blog
+							</a>
 							<a
 								href="/experience"
 								class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-white"
