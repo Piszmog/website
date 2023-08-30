@@ -1,6 +1,6 @@
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
-import type { Education, Job } from '$lib/utils/types';
+import type { Education, Job, Project } from '$lib/utils/types';
 
 declare global {
 	namespace App {
@@ -9,6 +9,7 @@ declare global {
 		interface PageData {
 			jobs: Job[];
 			education: Education[];
+			projects: Project[];
 		}
 		// interface Platform {}
 	}

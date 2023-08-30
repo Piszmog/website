@@ -33,3 +33,11 @@ export interface Education {
 	degree: string;
 	field: string;
 }
+
+export interface Project {
+	id: number;
+	name: string;
+	description: string;
+	url: string;
+	languages: string[];
+}
