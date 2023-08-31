@@ -1,5 +1,5 @@
 <script lang="ts">
-	import avatar from '$lib/assets/avatar.png';
+	import avatar from '$lib/assets/avatar.png?format=webp';
 </script>
 
 <div class="py-10 sm:py-10">

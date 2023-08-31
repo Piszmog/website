@@ -1,5 +1,5 @@
 <script lang="ts">
-	import avatar from '$lib/assets/avatar.png';
+	import avatar from '$lib/assets/avatar.png?format=webp';
 </script>
 
 <a href="/" class="-m-1.5 p-1.5">
