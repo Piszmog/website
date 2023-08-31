@@ -10,10 +10,10 @@
 			colorClass = 'bg-indigo-600';
 			break;
 		case 'code':
-			colorClass = 'bg-green-500';
+			colorClass = 'bg-green-600';
 			break;
 		case 'model':
-			colorClass = 'bg-yellow-500';
+			colorClass = 'bg-yellow-600';
 			break;
 		case 'view':
 			colorClass = 'bg-red-600';
