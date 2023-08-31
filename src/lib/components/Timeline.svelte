@@ -17,11 +17,13 @@
 <div class="flow-root">
 	<ul role="list" class="-mb-8">
 		{#each data as d, index (d.id)}
-			{#if d.company !== undefined}
-				<TimelineEntryJob {...d} isLast={index === data.length - 1} />
-			{:else if d.school !== undefined}
-				<TimelineEntryEducation {...d} isLast={index === data.length - 1} />
-			{/if}
+			<li>
+				{#if d.company !== undefined}
+					<TimelineEntryJob {...d} isLast={index === data.length - 1} />
+				{:else if d.school !== undefined}
+					<TimelineEntryEducation {...d} isLast={index === data.length - 1} />
+				{/if}
+			</li>
 		{/each}
 	</ul>
 </div>
