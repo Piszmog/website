@@ -38,7 +38,7 @@
 				<li class="pt-3">
 					<a
 						href="https://github.com/Piszmog"
-						class="gap flex items-center gap-5 text-gray-400 hover:text-gray-500"
+						class="gap flex items-center gap-5 text-gray-500 hover:text-gray-600 dark:text-slate-300 dark:hover:text-slate-200"
 					>
 						<span class="sr-only">GitHub</span>
 						<svg
@@ -65,7 +65,7 @@
 				<li class="pt-3">
 					<a
 						href="https://www.linkedin.com/in/randell-callahan-083aa951"
-						class="gap flex items-center gap-5 text-gray-400 hover:text-gray-500"
+						class="gap flex items-center gap-5 text-gray-500 hover:text-gray-600 dark:text-slate-300 dark:hover:text-slate-200"
 					>
 						<span class="sr-only">LinkedIn</span>
 						<svg
