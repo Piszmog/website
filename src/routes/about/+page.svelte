@@ -1,3 +1,7 @@
+<script lang="ts">
+	import avatar from '$lib/assets/avatar.png';
+</script>
+
 <div class="py-10 sm:py-10">
 	<div
 		class="mx-auto max-w-2xl px-4 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
@@ -28,7 +32,7 @@
 		</div>
 		<div class="mt-10 lg:col-start-2 lg:row-span-2 lg:mt-0 lg:self-center">
 			<div class="aspect-h-1 aspect-w-1 overflow-hidden rounded-xl">
-				<img src="/avatar.png" alt="" class="h-full w-full object-cover object-center" />
+				<img src={avatar} alt="" class="h-full w-full object-cover object-center" />
 			</div>
 			<ul class="mt-5">
 				<li class="pt-3">
