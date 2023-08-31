@@ -10,6 +10,7 @@
 	on:click={toggleDarkMode}
 	type="button"
 	class="rounded-full bg-white px-2.5 py-2.5 text-sm font-semibold ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:bg-slate-800 dark:text-slate-400 dark:ring-slate-400"
+	aria-label="Toggle dark mode"
 >
 	{#if isDarkMode}
 		<svg
