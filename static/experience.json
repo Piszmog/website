@@ -95,7 +95,7 @@
 			"company": "Charles Schwab",
 			"title": "Senior Software Engineer",
 			"details": [
-				"Lead the creation of a proxy sidecar service, enhancing Enterprise services with standardized, intuitive logging, advanced security measures, and seamless service discovery.",
+				"Led the creation of a proxy sidecar service, enhancing Enterprise services with standardized, intuitive logging, advanced security measures, and seamless service discovery.",
 				"Directed the design of an InnerSource dashboard, facilitating developers in effortlessly discovering and disseminating libraries and tools enterprise-wide.",
 				"Commanded the technical direction of a robust microservice platform tailored for non-marketing communications, processing in excess of one million records daily."
 			],
