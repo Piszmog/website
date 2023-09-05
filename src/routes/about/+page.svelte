@@ -24,9 +24,10 @@
 					personally and professionally.
 				</p>
 				<p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">
-					Furthermore, I deeply value a community where developers can flourish, share experiences,
-					and disseminate knowledge. I believe that when we come together as a community, we can
-					accomplish great things, inspire one another, and contribute to a better future for all.
+					My enthusiasm for acquiring knowledge is unending. Whether it's mastering the nuances of
+					compiling Go with TinyGo for my Raspberry Pi, deploying a Rust application to web-scrape
+					my go-to websites, or delving into the intricacies of functional programming, my journey
+					of discovery continues.
 				</p>
 			</div>
 		</div>
