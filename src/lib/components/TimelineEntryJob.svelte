@@ -38,7 +38,7 @@
 				</div>
 				<p class="mt-0.5 text-sm text-gray-500 dark:text-slate-300">{title}</p>
 				<p class="mt-0.5 text-xs text-gray-500 dark:text-slate-300">
-					{format(start)} - {format(end)}
+					{format(start)} - {end === "Present" ? end : format(end)}
 				</p>
 			</div>
 			<ul class="mr-3 list-none">
