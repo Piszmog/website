@@ -138,6 +138,27 @@
 				"persist": ["PostgreSQL", "Redis"],
 				"move": ["REST", "gRPC", "GraphQL"]
 			}
+		},
+		{
+			"id": 6,
+			"start": "2023-11-01T01:00:00.000-07:00",
+			"end": "Present",
+			"company": "HelloFresh",
+			"title": "Senior Software Engineer",
+			"details": [
+				"Enhanced and maintained a suite of Kotlin-based microservices,i nstrumental in optimizing the company’s ready-to-eat product manufacturing and planning processes."
+			],
+			"changeReason": "new",
+			"toolbox": {
+				"plan": ["JIRA"],
+				"code": ["Go", "Kotlin", "TypeScript"],
+				"model": ["JSON", "Protobuf", "GraphQL"],
+				"view": ["React"],
+				"build": ["GitHub Actions"],
+				"run": ["AWS", "Kubernetes", "Docker"],
+				"persist": ["PostgreSQL"],
+				"move": ["GraphQL"]
+			}
 		}
 	],
 	"education": [
