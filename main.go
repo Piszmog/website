@@ -17,6 +17,7 @@ import (
 func main() {
 	generate := flag.Bool("gen", false, "Generate the static files to ./public")
 	verVal := flag.String("ver", "dev", "The version of the application")
+	tailwindCmd := flag.String("tailwind", "tailwindcss", "The tailwind command to run")
 	flag.Parse()
 
 	logger := log.New(
@@ -46,7 +47,7 @@ func main() {
 		}
 
 		logger.Info("Compiling tailwind")
-		if err := gen.GenerateTailwindCSS(); err != nil {
+		if err := gen.GenerateTailwindCSS(*tailwindCmd); err != nil {
 			logger.Error("Failed to compile tailwind", err)
 			return
 		}

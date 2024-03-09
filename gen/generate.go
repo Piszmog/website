@@ -70,7 +70,7 @@ func writeIndexFile(dirPath string, page string, component templ.Component) erro
 
 const indexFile = "index.html"
 
-func GenerateTailwindCSS() error {
+func GenerateTailwindCSS(tailCmd string) error {
 	if err := os.RemoveAll("./dist/assets/css"); err != nil {
 		if !os.IsNotExist(err) {
 			return err
@@ -78,7 +78,7 @@ func GenerateTailwindCSS() error {
 	}
 
 	cmd := exec.Command(
-		"tailwindcss",
+		tailCmd,
 		"-i",
 		"./styles/input.css",
 		"-o",
