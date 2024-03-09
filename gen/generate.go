@@ -14,6 +14,22 @@ import (
 	"github.com/a-h/templ"
 )
 
+func GenerateTempl() error {
+	cmd := exec.Command(
+		"templ",
+		"generate",
+		"-path",
+		"./components",
+	)
+
+	if err := cmd.Run(); err != nil {
+		return err
+	}
+
+	return nil
+
+}
+
 func GenerateStatic(dirPath string) error {
 	// write root
 	if err := writeIndexFile(dirPath, "", pages.Home()); err != nil {
@@ -67,6 +83,7 @@ func GenerateTailwindCSS() error {
 		"./styles/input.css",
 		"-o",
 		fmt.Sprintf("./dist/assets/css/output@%s.css", version.Value),
+		"--minify",
 	)
 
 	if err := cmd.Run(); err != nil {
