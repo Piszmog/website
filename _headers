@@ -1,0 +1,17 @@
+/
+  Content-Type: text/html; charset=UTF-8
+
+/about/
+  Content-Type: text/html; charset=UTF-8
+
+/projects/
+  Content-Type: text/html; charset=UTF-8
+
+/experience/
+  Content-Type: text/html; charset=UTF-8
+
+/assets/css/*.css
+  Content-Type: text/css
+
+/assets/img/*.webp
+  Content-Type: image/webp
