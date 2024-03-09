@@ -1,13 +1,13 @@
 /
   Content-Type: text/html; charset=UTF-8
 
-/about
+/about/
   Content-Type: text/html; charset=UTF-8
 
-/projects
+/projects/
   Content-Type: text/html; charset=UTF-8
 
-/experience
+/experience/
   Content-Type: text/html; charset=UTF-8
 
 /assets/css/*.css
