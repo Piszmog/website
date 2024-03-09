@@ -1,3 +1,10 @@
+build: install-templ generate
+install-templ:
+	@echo "Installing templ..."
+	@go install github.com/a-h/templ/cmd/templ@v0.2.598
+generate:
+	@echo "Generating..."
+	@go run main.go -gen -ver v1.3.0
 format-templ:
 	@echo "Formatting templ files..."
 	@templ fmt .
