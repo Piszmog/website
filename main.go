@@ -7,9 +7,11 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/Piszmog/website/gen"
 	"github.com/Piszmog/website/log"
 	"github.com/Piszmog/website/server"
 	"github.com/Piszmog/website/server/router"
+	"github.com/Piszmog/website/version"
 )
 
 func main() {
@@ -23,6 +25,30 @@ func main() {
 	)
 
 	if *generate {
+		logger.Info("Clearing public directory")
+		if err := os.RemoveAll("./public"); err != nil {
+			logger.Error("Failed to clear public directory", err)
+			return
+		}
+
+		version.Value = *verVal
+
+		logger.Info("Generatng static files")
+		if err := gen.GenerateStatic("./public"); err != nil {
+			logger.Error("Failed to generate static files", err)
+			return
+		}
+
+		logger.Info("Compiling tailwind")
+		if err := gen.GenerateTailwindCSS(); err != nil {
+			logger.Error("Failed to compile tailwind", err)
+			return
+		}
+
+		logger.Info("Copying assets")
+		if err := copyAssets("./dist/assets"); err != nil {
+			logger.Error("Failed to copy assets", err)
+		}
 	} else {
 		svr := server.New(
 			logger,
@@ -45,7 +71,7 @@ func copyDir(src, dst string) error {
 		return err
 	}
 
-	if err := os.MkdirAll(dst, srcInfo.Mode()); err != nil {
+	if err = os.MkdirAll(dst, srcInfo.Mode()); err != nil {
 		return err
 	}
 
