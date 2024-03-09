@@ -61,7 +61,10 @@ func main() {
 }
 
 func copyAssets(dirPath string) error {
-	return copyDir(dirPath, "./public/assets")
+	if err := copyDir(dirPath, "./public/assets"); err != nil {
+		return err
+	}
+	return os.Rename("./public/assets/_headers", "./public/_headers")
 }
 
 // copyDir recursively copies a directory from src to dst
