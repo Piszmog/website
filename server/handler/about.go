@@ -15,7 +15,7 @@ var aboutOnce sync.Once
 func (h *Handler) About(w http.ResponseWriter, r *http.Request) {
 	aboutOnce.Do(func() {
 		var buf bytes.Buffer
-		core.HTML("about", pages.About()).Render(r.Context(), &buf)
+		_ = core.HTML("about", pages.About()).Render(r.Context(), &buf)
 		aboutHTML = buf.Bytes()
 	})
 	h.htmlStatic(w, http.StatusOK, aboutHTML)

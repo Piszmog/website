@@ -16,7 +16,7 @@ var homeOnce sync.Once
 func (h *Handler) Home(w http.ResponseWriter, r *http.Request) {
 	homeOnce.Do(func() {
 		var buf bytes.Buffer
-		core.HTML("", pages.Home()).Render(r.Context(), &buf)
+		_ = core.HTML("", pages.Home()).Render(r.Context(), &buf)
 		homeHTML = buf.Bytes()
 	})
 	h.htmlStatic(w, http.StatusOK, homeHTML)
