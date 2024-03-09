@@ -50,10 +50,10 @@ templ header(page string) {
 				</a>
 			</div>
 			<div class="hidden lg:flex lg:flex-1 lg:justify-end">
-				@darkModeToggle()
+				@darkModeToggle("desktop")
 			</div>
 		</nav>
-		<div id="mobile-menu" class="lg:hidden" role="dialog" aria-modal="true">
+		<div id="mobile-menu" class="lg:hidden hidden" role="dialog" aria-modal="true">
 			<div class="fixed inset-0 z-10"></div>
 			<div
 				class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 dark:bg-slate-800 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
@@ -101,7 +101,7 @@ templ header(page string) {
 							</a>
 						</div>
 						<div class="py-6">
-							@darkModeToggle()
+							@darkModeToggle("mobile")
 						</div>
 					</div>
 				</div>

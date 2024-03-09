@@ -1,14 +1,14 @@
 package core
 
-templ darkModeToggle() {
+templ darkModeToggle(id string) {
 	<button
-		onClick={ toggleDarkMode() }
+		onClick={ toggleDarkMode(id) }
 		type="button"
 		class="rounded-full bg-white px-2.5 py-2.5 text-sm font-semibold ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:bg-slate-800 dark:text-slate-400 dark:ring-slate-400"
 		aria-label="Toggle dark mode"
 	>
 		<svg
-			id="dark-mode-moon-icon"
+			id={ "dark-mode-moon-icon-" + id }
 			xmlns="http://www.w3.org/2000/svg"
 			class="icon icon-tabler icon-tabler-moon hidden"
 			width="24"
@@ -24,7 +24,7 @@ templ darkModeToggle() {
 			<path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
 		</svg>
 		<svg
-			id="dark-mode-sun-icon"
+			id={ "dark-mode-sun-icon-" + id }
 			xmlns="http://www.w3.org/2000/svg"
 			class="icon icon-tabler icon-tabler-sun-high block"
 			width="24"
@@ -50,9 +50,9 @@ templ darkModeToggle() {
 	</button>
 }
 
-script toggleDarkMode() {
-	const darkModeMoonIcon = document.getElementById('dark-mode-moon-icon');
-	const darkModeSunIcon = document.getElementById('dark-mode-sun-icon');
+script toggleDarkMode(id string) {
+	const darkModeMoonIcon = document.getElementById('dark-mode-moon-icon-'+id);
+	const darkModeSunIcon = document.getElementById('dark-mode-sun-icon-'+id);
 
 	if(darkModeMoonIcon.style.display === 'none') {
 		darkModeMoonIcon.style.display = 'block';
