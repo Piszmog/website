@@ -1,0 +1,46 @@
+package core
+
+import "github.com/Piszmog/website/models"
+import "github.com/Piszmog/website/utils"
+
+templ timelineEntryJob(job models.Job, isLast bool) {
+	<div class="relative pb-8">
+		if !isLast {
+			<span
+				class="absolute left-5 top-5 -ml-px h-full w-0.5 bg-gray-200 dark:bg-slate-400"
+				aria-hidden="true"
+			></span>
+		}
+		<div class="relative flex items-start space-x-3">
+			<div>
+				<div class="relative px-1">
+					<div
+						class="flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 ring-8 ring-white dark:bg-slate-600 dark:text-white dark:ring-slate-800"
+					>
+						@jobIcon(job.ChangeReason)
+					</div>
+				</div>
+			</div>
+			<div class="min-w-0 flex-1">
+				<div>
+					<div class="text-sm">
+						<p class="font-medium text-gray-900 dark:text-white">{ job.Company }</p>
+					</div>
+					<p class="mt-0.5 text-sm text-gray-500 dark:text-slate-300">{ job.Title }</p>
+					<p class="mt-0.5 text-xs text-gray-500 dark:text-slate-300">
+						{ utils.FormatDate(job.Start) } - { utils.FormatDate(job.End) }
+					</p>
+				</div>
+				<ul class="mr-3 list-none">
+					for _, d := range job.Details {
+						<li class="mt-2 flex items-center">
+							<span class="mr-2 inline-block h-1 w-1 rounded-full bg-black"></span>
+							<p class="text-sm text-gray-700 dark:text-slate-400">{ d }</p>
+						</li>
+					}
+				</ul>
+				@toolboxCards(job.Toolbox)
+			</div>
+		</div>
+	</div>
+}

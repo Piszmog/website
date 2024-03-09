@@ -1,0 +1,50 @@
+package core
+
+import "golang.org/x/text/cases"
+import "golang.org/x/text/language"
+import "github.com/Piszmog/website/models"
+
+templ toolboxCards(tools models.Toolbox) {
+	<div class="mt-2">
+		<h2 class="text-md font-medium text-gray-500 dark:text-slate-300">Toolbox</h2>
+		<ul role="list" class="mr-4 mt-3 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+			@toolboxCard("plan", tools.Plan)
+			@toolboxCard("code", tools.Code)
+			@toolboxCard("model", tools.Model)
+			@toolboxCard("view", tools.View)
+			@toolboxCard("build", tools.Build)
+			@toolboxCard("run", tools.Run)
+			@toolboxCard("persist", tools.Persist)
+			@toolboxCard("move", tools.Move)
+		</ul>
+	</div>
+}
+
+templ toolboxCard(title string, items []string) {
+	<li class="col-span-1 flex rounded-md shadow-sm">
+		<div
+			class={
+				"dark flex w-16 flex-shrink-0 items-center justify-center rounded-l-md text-sm font-medium text-white",
+				templ.KV("bg-indigo-600", title == "plan"),
+				templ.KV("bg-green-600", title == "code"),
+				templ.KV("bg-yellow-600", title == "model"),
+				templ.KV("bg-red-600", title == "view"),
+				templ.KV("bg-blue-600", title == "build"),
+				templ.KV("bg-pink-600", title == "run"),
+				templ.KV("bg-purple-600", title == "persist"),
+				templ.KV("bg-gray-500", title == "move"),
+			}
+		>
+			{ cases.Title(language.English).String(title) }
+		</div>
+		<div
+			class="flex flex-1 items-center justify-between truncate rounded-r-md border-b border-r border-t border-gray-200 bg-white dark:border-slate-600 dark:bg-slate-800"
+		>
+			<div class="flex-1 truncate px-4 py-2 text-sm">
+				for _, item := range items {
+					<p class="text-gray-500 dark:text-slate-300">{ item }</p>
+				}
+			</div>
+		</div>
+	</li>
+}
