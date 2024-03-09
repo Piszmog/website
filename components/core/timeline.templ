@@ -1,0 +1,20 @@
+package core
+
+import "github.com/Piszmog/website/models"
+
+templ Timeline(entries []models.TimelineEntry) {
+	<div class="flow-root">
+		<ul role="list" class="-mb-8">
+			for i, entry := range entries {
+				<li>
+					switch e := entry.(type) {
+						case models.Job:
+							@timelineEntryJob(e, i == len(entries)-1)
+						case models.Education:
+							@timelineEntryEducation(e, i == len(entries)-1)
+					}
+				</li>
+			}
+		</ul>
+	</div>
+}

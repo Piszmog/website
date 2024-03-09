@@ -1,9 +1,15 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
 	darkMode: 'class',
-	content: ['./src/**/*.{html,js,svelte,ts}'],
+	content: [
+		"./components/**/*.templ",
+	],
 	theme: {
-		extend: {}
+		extend: {},
 	},
-	plugins: []
-};
+	plugins: [
+		require('@tailwindcss/forms'),
+		require('@tailwindcss/typography'),
+	],
+}
+
