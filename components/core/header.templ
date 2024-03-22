@@ -48,6 +48,12 @@ templ header(page string) {
 				>
 					Projects
 				</a>
+				<a
+					href="/resume"
+					class={ "text-sm font-semibold leading-6 text-gray-900 dark:text-white", templ.KV("text-blue-600", page == "resume") }
+				>
+					Resume
+				</a>
 			</div>
 			<div class="hidden lg:flex lg:flex-1 lg:justify-end">
 				@darkModeToggle("desktop")
