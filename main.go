@@ -71,6 +71,9 @@ func copyAssets(dirPath string) error {
 	if err := copyDir(dirPath, "./public/assets"); err != nil {
 		return err
 	}
+	if err := os.Rename("./public/assets/_redirects", "./public/_redirects"); err != nil {
+		return err
+	}
 	return os.Rename("./public/assets/_headers", "./public/_headers")
 }
 
