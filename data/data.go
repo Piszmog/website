@@ -204,7 +204,7 @@ var ProjectsData = []models.Project{
 	},
 	{
 		Name:        "website",
-		Description: "🌐 My personal website",
+		Description: "🌐 My personal website (this one!)",
 		URL:         "https://github.com/Piszmog/website",
 		Languages:   []string{"Go", "HTML", "CSS"},
 	},
