@@ -21,6 +21,7 @@ func New(logger *slog.Logger) http.Handler {
 	mux.HandleFunc(http.MethodGet+" /about", h.About)
 	mux.HandleFunc(http.MethodGet+" /experience", h.Experience)
 	mux.HandleFunc(http.MethodGet+" /projects", h.Projects)
+	mux.HandleFunc(http.MethodGet+" /resume", h.Resume)
 
 	return middleware.NewLoggingMiddleware(logger, mux)
 }

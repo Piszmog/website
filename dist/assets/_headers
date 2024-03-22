@@ -10,8 +10,14 @@
 /experience/
   Content-Type: text/html; charset=UTF-8
 
+/resume/
+  Content-Type: application/pdf
+
 /assets/css/*.css
   Content-Type: text/css
 
 /assets/img/*.webp
   Content-Type: image/webp
+
+/assets/img/*.pdf
+  Content-Type: application/pdf
