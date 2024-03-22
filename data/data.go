@@ -202,4 +202,22 @@ var ProjectsData = []models.Project{
 		URL:         "https://github.com/Piszmog/job-app-tracker",
 		Languages:   []string{"Svelte", "Rust", "TypeScript"},
 	},
+	{
+		Name:        "website",
+		Description: "🌐 My personal website",
+		URL:         "https://github.com/Piszmog/website",
+		Languages:   []string{"Go", "HTML", "CSS"},
+	},
+	{
+		Name:        "jiggle",
+		Description: "🧂 Merges changes through a git tree.",
+		URL:         "https://github.com/Piszmog/jiggle",
+		Languages:   []string{"Rust"},
+	},
+	{
+		Name:        "pathwise",
+		Description: "📈 Track and manage your job applications",
+		URL:         "https://github.com/Piszmog/pathwise",
+		Languages:   []string{"Go", "CSS"},
+	},
 }
