@@ -121,10 +121,10 @@ var ExperienceData = []models.TimelineEntry{
 		ChangeReason: models.ChangeReasonNew,
 		Toolbox: models.Toolbox{
 			Plan:    []string{},
-			Code:    []string{"Java", "Swing", "JavaScript", "Python"},
+			Code:    []string{"Java", "Java Swing", "JavaScript", "Python"},
 			Model:   []string{"XML", "JSON"},
 			View:    []string{"PrimeFaces"},
-			Build:   []string{"Ant", "Python"},
+			Build:   []string{"Ant"},
 			Run:     []string{"WebLogic"},
 			Persist: []string{"Oracle"},
 			Move:    []string{"REST", "SOAP"},
@@ -167,6 +167,12 @@ var ExperienceData = []models.TimelineEntry{
 
 var ProjectsData = []models.Project{
 	{
+		Name:        "website",
+		Description: "🌐 My personal website (this one!)",
+		URL:         "https://github.com/Piszmog/website",
+		Languages:   []string{"Go", "HTML", "CSS"},
+	},
+	{
 		Name:        "cloudconfigclient",
 		Description: "Go client library for Spring Config Server",
 		URL:         "https://github.com/Piszmog/cloudconfigclient",
@@ -201,12 +207,6 @@ var ProjectsData = []models.Project{
 		Description: "📈 Track and manage your job applications",
 		URL:         "https://github.com/Piszmog/job-app-tracker",
 		Languages:   []string{"Svelte", "Rust", "TypeScript"},
-	},
-	{
-		Name:        "website",
-		Description: "🌐 My personal website (this one!)",
-		URL:         "https://github.com/Piszmog/website",
-		Languages:   []string{"Go", "HTML", "CSS"},
 	},
 	{
 		Name:        "jiggle",
