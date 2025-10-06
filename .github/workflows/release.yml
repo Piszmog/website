@@ -115,6 +115,7 @@ jobs:
         with:
           go-version-file: 'go.mod'
           cache: false
+      - run: go mod download
       - run: |
           go run main.go -gen -ver ${{ needs.calculate-version.outputs.new_version }}
       - name: Deploy Pages
