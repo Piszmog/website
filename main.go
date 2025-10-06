@@ -17,7 +17,6 @@ import (
 func main() {
 	generate := flag.Bool("gen", false, "Generate the static files to ./public")
 	verVal := flag.String("ver", "dev", "The version of the application")
-	tailwindCmd := flag.String("tailwind", "tailwindcss", "The tailwind command to run")
 	flag.Parse()
 
 	logger := log.New(
@@ -28,7 +27,7 @@ func main() {
 	if *generate {
 		logger.Info("Clearing public directory")
 		if err := os.RemoveAll("./public"); err != nil {
-			logger.Error("Failed to clear public directory", err)
+			logger.Error("Failed to clear public directory", "error", err)
 			return
 		}
 
@@ -36,25 +35,25 @@ func main() {
 
 		logger.Info("Generating templ")
 		if err := gen.GenerateTempl(); err != nil {
-			logger.Error("Failed to generate templ", err)
+			logger.Error("Failed to generate templ", "error", err)
 			return
 		}
 
 		logger.Info("Generatng static files")
 		if err := gen.GenerateStatic("./public"); err != nil {
-			logger.Error("Failed to generate static files", err)
+			logger.Error("Failed to generate static files", "error", err)
 			return
 		}
 
 		logger.Info("Compiling tailwind")
-		if err := gen.GenerateTailwindCSS(*tailwindCmd); err != nil {
-			logger.Error("Failed to compile tailwind", err)
+		if err := gen.GenerateTailwindCSS(); err != nil {
+			logger.Error("Failed to compile tailwind", "error", err)
 			return
 		}
 
 		logger.Info("Copying assets")
 		if err := copyAssets("./dist/assets"); err != nil {
-			logger.Error("Failed to copy assets", err)
+			logger.Error("Failed to copy assets", "error", err)
 		}
 	} else {
 		svr := server.New(

@@ -16,6 +16,8 @@ import (
 
 func GenerateTempl() error {
 	cmd := exec.Command(
+		"go",
+		"tool",
 		"templ",
 		"generate",
 		"-path",
@@ -70,7 +72,7 @@ func writeIndexFile(dirPath string, page string, component templ.Component) erro
 
 const indexFile = "index.html"
 
-func GenerateTailwindCSS(tailCmd string) error {
+func GenerateTailwindCSS() error {
 	if err := os.RemoveAll("./dist/assets/css"); err != nil {
 		if !os.IsNotExist(err) {
 			return err
@@ -78,7 +80,9 @@ func GenerateTailwindCSS(tailCmd string) error {
 	}
 
 	cmd := exec.Command(
-		tailCmd,
+		"go",
+		"tool",
+		"go-tw",
 		"-i",
 		"./styles/input.css",
 		"-o",

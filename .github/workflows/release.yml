@@ -2,42 +2,101 @@ name: Release
 on:
   workflow_dispatch:
     inputs:
-      version:
-        description: The version to release (e.g. v1.0.0)
+      increment:
+        description: 'Version increment type'
         required: true
-        type: string
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+        default: patch
+permissions:
+  contents: write
 
 jobs:
-  release:
-    name: Release
-    permissions:
-      contents: write
+  calculate-version:
+    name: Calculate Version
     runs-on: ubuntu-latest
+    outputs:
+      new_version: ${{ steps.version.outputs.new_version }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-      - uses: actions/setup-go@v4
+        uses: actions/checkout@v5
         with:
-          go-version: 1.22.x
-      - run: go mod download
-      - run: go install github.com/a-h/templ/cmd/templ@v0.2.639
-      - name: Generate Templ Files
-        run: make generate-templ
-      - name: Generate CSS
+          fetch-depth: 0
+      - name: Get latest release
+        id: latest_release
         run: |
-          curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64
-          chmod +x tailwindcss-linux-x64
-          mv tailwindcss-linux-x64 tailwindcss
-          ./tailwindcss -i ./styles/input.css -o ./dist/assets/css/output@${{ github.event.inputs.version }}.css --minify
+          LATEST_TAG=$(gh release list --limit 1 --json tagName --jq '.[0].tagName')
+          if [ -z "$LATEST_TAG" ] || [ "$LATEST_TAG" = "null" ]; then
+            LATEST_TAG="v0.0.0"
+          fi
+          echo "latest_tag=$LATEST_TAG" >> $GITHUB_OUTPUT
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Calculate new version
+        id: version
+        run: |
+          LATEST_TAG="${{ steps.latest_release.outputs.latest_tag }}"
+          INCREMENT="${{ github.event.inputs.increment }}"
+          # Remove 'v' prefix if present
+          VERSION=${LATEST_TAG#v}
+          # Split version into parts
+          IFS='.' read -ra VERSION_PARTS <<< "$VERSION"
+          MAJOR=${VERSION_PARTS[0]:-0}
+          MINOR=${VERSION_PARTS[1]:-0}
+          PATCH=${VERSION_PARTS[2]:-0}
+          # Calculate new version based on increment type
+          case $INCREMENT in
+            major)
+              MAJOR=$((MAJOR + 1))
+              MINOR=0
+              PATCH=0
+              ;;
+            minor)
+              MINOR=$((MINOR + 1))
+              PATCH=0
+              ;;
+            patch)
+              PATCH=$((PATCH + 1))
+              ;;
+          esac
+          NEW_VERSION="v${MAJOR}.${MINOR}.${PATCH}"
+          echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
+          echo "Calculated new version: $NEW_VERSION (from $LATEST_TAG using $INCREMENT increment)"
+      - name: Announce new version
+        run: |
+          echo "::notice title=New Release Version::Releasing ${{ steps.version.outputs.new_version }} (increment: ${{ github.event.inputs.increment }})"
+  tag:
+    name: Tag
+    runs-on: ubuntu-latest
+    needs: [calculate-version]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Create Tag
+        uses: piszmog/create-tag@v1
+        with:
+          version: ${{ needs.calculate-version.outputs.new_version }}
+          message: ${{ needs.calculate-version.outputs.new_version }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: 'go.mod'
+          cache: false
+      - run: go mod download
+      - run: go tool templ generate -path ./ui/components
+      - run: go tool go-tw -i ./styles/input.css -o ./dist/assets/css/output@dev.css
       - name: Build Application
         run: go build -o ./app -ldflags="-s -w -X version.Value=${{ github.event.inputs.version }}"
-      - name: Create Tag
-        uses: negz/create-tag@v1
-        with:
-          version: ${{ github.event.inputs.version }}
-          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           name: ${{ github.event.inputs.version }}
           tag_name: ${{ github.event.inputs.version }}
@@ -46,7 +105,7 @@ jobs:
       - name: Generate static pages
         run: ./app -gen -ver ${{ github.event.inputs.version }} -tailwind "./tailwindcss" 
       - name: Deploy Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with: 
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: pages

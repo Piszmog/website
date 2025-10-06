@@ -1,36 +1,41 @@
 name: CI
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
-    pull_request:
+    paths-ignore:
+      - '.github/**'
+  pull_request:
+    branches:
       - main
+    paths-ignore:
+      - '.github/**'
 jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-go@v6
         with:
-          go-version: 1.22.x
+          go-version-file: 'go.mod'
+          cache: false
       - run: go mod download
-      - run: go install github.com/a-h/templ/cmd/templ@v0.2.639
-      - run: make generate-templ
+      - run: go tool templ generate -path ./components
       - name: Lint
-        uses: golangci/golangci-lint-action@v3
+        uses: golangci/golangci-lint-action@v8
         with:
-          version: v1.54
+          version: latest
   test:
     name: Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-go@v6
         with:
-          go-version: 1.22.x
+          go-version-file: 'go.mod'
+          cache: false
       - run: go mod download
-      - run: go install github.com/a-h/templ/cmd/templ@v0.2.639
-      - run: make generate-templ
-      - name: Test
-        run: go test -race ./...
+      - run: go tool templ generate -path ./components
+      - run: go test -race ./...
