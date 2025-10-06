@@ -20,7 +20,10 @@ var ExperienceData = []models.TimelineEntry{
 			Move:    []string{"GraphQL"},
 		},
 		Details: []string{
-			"Enhanced and maintained a suite of Kotlin-based microservices, instrumental in optimizing the company’s ready-to-eat product manufacturing and planning processes.",
+			"Optimized and maintained a suite of Kotlin-based microservices, streamlining ready-to-eat product manufacturing and planning.",
+			"Architected SKU service integration that improved meal planning accuracy by enabling real-time ingredient availability and cooking requirement tracking.",
+			"Led technical architecture and delivery for two engineering teams following senior engineer departure, driving design decisions, establishing best practices, and ensuring on-time project completion across multiple concurrent initiatives.",
+			"Took ownership of stagnant lunch-and-learn series, driving regular sessions on architecture/best practices/technologies that improved cross-team collaboration",
 		},
 	},
 	models.Job{
@@ -173,10 +176,22 @@ var ProjectsData = []models.Project{
 		Languages:   []string{"Go", "HTML", "CSS"},
 	},
 	{
+		Name:        "pathwise",
+		Description: "📈 Track and manage your job applications",
+		URL:         "https://github.com/Piszmog/pathwise",
+		Languages:   []string{"Go", "Tailwind", "Templ"},
+	},
+	{
 		Name:        "cloudconfigclient",
 		Description: "Go client library for Spring Config Server",
 		URL:         "https://github.com/Piszmog/cloudconfigclient",
 		Languages:   []string{"Go"},
+	},
+	{
+		Name:        "go-htmx-template",
+		Description: "Template for creating a Go and HTMX application",
+		URL:         "https://github.com/Piszmog/go-htmx-template",
+		Languages:   []string{"Go", "Tailwind", "Templ"},
 	},
 	{
 		Name:        "lopper",
@@ -203,21 +218,9 @@ var ProjectsData = []models.Project{
 		Languages:   []string{"Rust"},
 	},
 	{
-		Name:        "job-app-tracker",
-		Description: "📈 Track and manage your job applications",
-		URL:         "https://github.com/Piszmog/job-app-tracker",
-		Languages:   []string{"Svelte", "Rust", "TypeScript"},
-	},
-	{
 		Name:        "jiggle",
 		Description: "🧂 Merges changes through a git tree.",
 		URL:         "https://github.com/Piszmog/jiggle",
 		Languages:   []string{"Rust"},
-	},
-	{
-		Name:        "pathwise",
-		Description: "📈 Track and manage your job applications",
-		URL:         "https://github.com/Piszmog/pathwise",
-		Languages:   []string{"Go", "CSS"},
 	},
 }
