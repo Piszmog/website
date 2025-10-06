@@ -33,13 +33,7 @@ func main() {
 
 		version.Value = *verVal
 
-		logger.Info("Generating templ")
-		if err := gen.GenerateTempl(); err != nil {
-			logger.Error("Failed to generate templ", "error", err)
-			return
-		}
-
-		logger.Info("Generatng static files")
+		logger.Info("Generating static files")
 		if err := gen.GenerateStatic("./public"); err != nil {
 			logger.Error("Failed to generate static files", "error", err)
 			return
