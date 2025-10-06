@@ -65,7 +65,9 @@ func writeIndexFile(dirPath string, page string, component templ.Component) erro
 	if err != nil {
 		return err
 	}
-	defer f.Close()
+	defer func() {
+		_ = f.Close()
+	}()
 
 	return core.HTML(page, component).Render(context.Background(), f)
 }
