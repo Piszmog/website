@@ -4,8 +4,33 @@ import "github.com/Piszmog/website/models"
 
 var ExperienceData = []models.TimelineEntry{
 	models.Job{
-		Start:        "2023-11-01",
+		Start:        "2026-06-01",
 		End:          "Present",
+		Company:      "HelloFresh",
+		Title:        "Staff Software Engineer",
+		ChangeReason: models.ChangeReasonPromotion,
+		Toolbox: models.Toolbox{
+			Plan:    []string{"JIRA"},
+			Code:    []string{"Go", "Kotlin", "TypeScript", "Claude Code", "OpenCode"},
+			Model:   []string{"JSON", "Protobuf", "GraphQL"},
+			View:    []string{"React"},
+			Build:   []string{"GitHub Actions", "ArgoCD"},
+			Run:     []string{"AWS", "AWS Bedrock", "Kubernetes", "Docker"},
+			Persist: []string{"PostgreSQL"},
+			Move:    []string{"GraphQL", "Kafka"},
+		},
+		Details: []string{
+			"Own technical direction for the planning and production platforms behind Factor75, HelloFresh's ready-to-eat brand, where every meal across the US and Europe is planned and tracked, driving high-visibility initiatives from design through delivery.",
+			"Lead a group of 5 engineers and serve as technical consultant to a 4-engineer sister team, guiding design reviews, architecture decisions, and technical coaching across both teams.",
+			"Lead AI adoption for the group by championing AI-assisted development centered on Claude Code, supplemented by OpenCode, establishing guidelines for responsible use, and building shareable Claude Code plugins (LSP integrations, Kafka skills) used by engineers across teams.",
+			"Authored the company's internal Claude Code setup and best-practices guide, one of the highest-viewed documentation pages company-wide with 300+ views across a 250-person engineering organization.",
+			"Built an AI-powered support bot that connects to application databases to diagnose production issues, resolving 12 incidents in its first months and reducing on-call burden.",
+			"Author design documents and engineering standards that align teams on best practices, partner with cross-functional teams on architecture and roadmaps, and champion engineering culture through a recurring lunch-and-learn program.",
+		},
+	},
+	models.Job{
+		Start:        "2023-11-01",
+		End:          "2026-06-01",
 		Company:      "HelloFresh",
 		Title:        "Senior Software Engineer",
 		ChangeReason: models.ChangeReasonNew,
@@ -20,10 +45,10 @@ var ExperienceData = []models.TimelineEntry{
 			Move:    []string{"GraphQL"},
 		},
 		Details: []string{
-			"Optimized and maintained a suite of Kotlin-based microservices, streamlining ready-to-eat product manufacturing and planning.",
-			"Architected SKU service integration that improved meal planning accuracy by enabling real-time ingredient availability and cooking requirement tracking.",
-			"Led technical architecture and delivery for two engineering teams following senior engineer departure, driving design decisions, establishing best practices, and ensuring on-time project completion across multiple concurrent initiatives.",
-			"Took ownership of stagnant lunch-and-learn series, driving regular sessions on architecture/best practices/technologies that improved cross-team collaboration",
+			"Led technical architecture and delivery for two engineering teams following a senior engineer's departure, driving design decisions and ensuring on-time completion across multiple concurrent initiatives, a scope that led to promotion to Staff Engineer.",
+			"Architected a SKU service integration that improved meal-planning accuracy by enabling real-time ingredient availability and cooking-requirement tracking.",
+			"Optimized and maintained a suite of Kotlin-based microservices streamlining ready-to-eat product manufacturing and planning.",
+			"Revitalized a stagnant lunch-and-learn series into a regular forum on architecture and best practices, improving cross-team collaboration.",
 		},
 	},
 	models.Job{
@@ -43,9 +68,9 @@ var ExperienceData = []models.TimelineEntry{
 			Move:    []string{"REST", "gRPC", "GraphQL"},
 		},
 		Details: []string{
-			"Led the design and deployment of advanced search capabilities, enabling security teams and auditors to conduct in-depth analysis of Git codebases.",
-			"Directed a team of 3 developers to create a remote code execution service, enabling users to run run arbitrary code within a secured environment with Kubernetes and Firecracker.",
-			"Built long asked for features into the Batch Changes product, using Go and React.",
+			"Led design and deployment of advanced code-search capabilities, enabling security teams and auditors to perform in-depth analysis across Git codebases.",
+			"Directed a team of 3 engineers building a remote code-execution service that ran arbitrary user code in secure, isolated environments using Kubernetes and Firecracker.",
+			"Shipped long-requested features in the Batch Changes product using Go and React.",
 		},
 	},
 	models.Job{
@@ -65,10 +90,10 @@ var ExperienceData = []models.TimelineEntry{
 			Move:    []string{"REST"},
 		},
 		Details: []string{
-			"Drove the creation of a proxy sidecar service written in Go, enhancing Enterprise services with standardized, logging, advanced security measures, and seamless service discovery.",
-			"Led a team of 3 developers in creating an InnerSource platform that empowered enterprise teams to share code, enabled management to assess risks, and provided leadership with tools to monitor adoption.",
-			"Built GitHub Actions, in JavaScript, to seamlessly onboard and transition Enterprise teams to GitHub.",
-			"Developed a suite of InnerSource libraries for streamlined logging, automated deployments, and service discovery across .NET, Java, and Python applications.",
+			"Drove creation of a proxy sidecar service written in Go that gave enterprise services standardized logging, advanced security controls, and seamless service discovery.",
+			"Led a team of 3 engineers building an InnerSource platform that enabled enterprise-wide code sharing, gave management risk-assessment tooling, and gave leadership adoption metrics.",
+			"Built GitHub Actions in JavaScript to onboard and migrate enterprise teams to GitHub.",
+			"Developed a suite of InnerSource libraries for standardized logging, automated deployments, and service discovery across .NET, Java, and Python applications.",
 		},
 	},
 	models.Job{
@@ -88,9 +113,9 @@ var ExperienceData = []models.TimelineEntry{
 			Move:    []string{"REST", "SOAP", "RabbitMQ"},
 		},
 		Details: []string{
-			"Designed and implemented 30+ microservices for efficient non-marketing communications, handling millions of records daily.",
-			"Led the transition from Mainframe processes to a contemporary platform leveraging Cloud technologies and Java.",
-			"Automated our deployment ticketing process using Python, greatly decreasing the amount of time a team member needed to spend on creating tickets.",
+			"Designed and implemented 30+ microservices for non-marketing communications, processing millions of records daily.",
+			"Led migration from mainframe processes to a modern cloud-based Java platform.",
+			"Automated the deployment ticketing process with Python, sharply reducing manual effort per release.",
 		},
 	},
 	models.Job{
@@ -110,10 +135,9 @@ var ExperienceData = []models.TimelineEntry{
 			Move:    []string{"REST", "SOAP"},
 		},
 		Details: []string{
-			"Provided support for legacy Java Spring applications focused on non-marketing communications processing.",
-			"Enhanced application reliability by elevating test coverage and enriching documentation for better clarity and usability.",
-			"Led my team in being among the trailblazers to deploy applications on Pivotal Cloud Foundry.",
-			"Steered my team's seamless transition from Team Foundation Server to the Atlassian suite, emphasizing our commitment to Agile methodologies.",
+			"Supported legacy Java Spring applications for non-marketing communications processing, raising test coverage and improving documentation to boost reliability.",
+			"Led the team as an early adopter deploying applications to Pivotal Cloud Foundry.",
+			"Steered the team's migration from Team Foundation Server to the Atlassian suite in support of Agile practices.",
 		},
 	},
 	models.Job{
@@ -133,9 +157,9 @@ var ExperienceData = []models.TimelineEntry{
 			Move:    []string{"REST", "SOAP"},
 		},
 		Details: []string{
-			"Led the performance of satellite management applications through advanced algorithm optimization and augmented the Thick Client with innovative features.",
-			"Built a lightweight web application alternative, catering to users operating on constrained hardware, offering an efficient replacement to the Thick Client.",
-			"Led my team's shift from Ant to Python for application development, significantly reducing build time.",
+			"Improved performance of satellite-management applications through algorithm optimization and added new capabilities to the thick client.",
+			"Built a lightweight web-application alternative for users on constrained hardware, providing an efficient replacement for the thick client.",
+			"Led the team's shift from Ant to Python-based builds, significantly reducing build times.",
 		},
 	},
 	models.Job{
@@ -155,8 +179,8 @@ var ExperienceData = []models.TimelineEntry{
 			Move:    []string{"REST", "SOAP", "RabbitMQ"},
 		},
 		Details: []string{
-			"Developed and integrated enhancements for a space debris monitoring web application using HTML, JavaScript, and jQuery, significantly improving user experience.",
-			"Led improvements to both web and Thick Client applications for Strategy and Assessment, trusted tools of the U.S. Air Force and the Royal Canadian Air Force.",
+			"Developed enhancements for a space-debris monitoring web application using HTML, JavaScript, and jQuery, significantly improving user experience.",
+			"Led improvements to web and thick-client Strategy and Assessment applications trusted by the U.S. Air Force and Royal Canadian Air Force.",
 		},
 	},
 	models.Education{
